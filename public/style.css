@@ -1,0 +1,345 @@
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    display: none;
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  button {
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .message {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+  }
+  
+  .message-user {
+    font-weight: bold;
+  }
+  
+  .sent {
+    align-self: flex-end;
+    background-color: #f0f0f0;
+  }
+  
+  .received {
+    align-self: flex-start;
+    background-color: #e5e5e5;
+  }
+  
+  .message-timestamp {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  #groupMessages .sent {
+    text-align: right;
+  }
+  
+  #groupMessages .received {
+    text-align: left;
+  }
+  
+  #groupMessages {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    list-style-type: none;
+  }
+  
+  #groupMessages li {
+    margin-bottom: 10px;
+  }
+  
+  .loader {
+    display: none;
+    text-align: center;
+  }
+  
+  .loader.show {
+    display: block;
+  }
+  
+  .sent {
+    align-self: flex-end;
+    background-color: #f0f0f0;
+  }
+  
+  .received {
+    align-self: flex-start;
+    background-color: #e5e5e5;
+  }
+  
+  #groupMessages .sent {
+    text-align: right;
+  }
+  
+  #groupMessages .received {
+    text-align: left;
+  }
+  
+  .messages-container {
+    height: 500px;
+    /* Adjust as needed */
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .message {
+    margin-bottom: 10px;
+  }
+  
+  .message.sent {
+    text-align: right;
+  }
+  
+  .message.received {
+    text-align: left;
+  }
+  
+  #loadingMore {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  #groupMessages {
+    height: 400px;
+    /* Adjust as needed */
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  
+  
+  
+  /* 
+  
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  #registerContainer,
+  #loginContainer,
+  #chatContainer,
+  #privateChatContainer {
+    display: none;
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin: 20px;
+  }
+  
+  #groupChatContainer {
+    display: none;
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin: 20px;
+  }
+  
+  #registerContainer h2,
+  #loginContainer h2,
+  #chatContainer h2,
+  #privateChatContainer h2 {
+    text-align: center;
+  }
+  
+  #registerForm,
+  #loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  button {
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #privateChatContainer {
+    margin-top: 50px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  #onlineUsersList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #onlineUsersList li {
+    padding: 8px;
+    cursor: pointer;
+    background-color: #ddd;
+    margin-bottom: 5px;
+  }
+  
+  #onlineUsersList li:hover {
+    background-color: #ccc;
+  }
+  
+  .message {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+  }
+  
+  .message-user {
+    font-weight: bold;
+  }
+  
+  .sent {
+    align-self: flex-end;
+    background-color: #f0f0f0;
+  }
+  
+  .received {
+    align-self: flex-start;
+    background-color: #e5e5e5;
+  }
+  
+  .message-timestamp {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  #privateMessages .sent {
+    text-align: right;
+  }
+  
+  #groupMessages .sent {
+    text-align: right;
+  }
+  
+  #privateMessages .received {
+    text-align: left;
+  }
+  
+  #groupMessages.received {
+    text-align: left;
+  }
+  
+  #privateMessages {
+    height: 600px;
+    overflow: auto;
+  }
+  
+  #groupMessages {
+    height: 600px;
+    overflow: auto;
+  }
+  
+  .container {
+    display: none;
+  }
+  
+  .user-item {
+    cursor: pointer;
+  }
+  
+  #privateMessagesList {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    list-style-type: none;
+  }
+  
+  #groupMessages {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    list-style-type: none;
+  }
+  
+  #privateMessagesList li {
+    margin-bottom: 10px;
+  }
+  
+  #groupMessages li {
+    margin-bottom: 10px;
+  }
+  
+  .loader {
+    display: none;
+    text-align: center;
+  }
+  
+  .loader.show {
+    display: block;
+  } */
+  
